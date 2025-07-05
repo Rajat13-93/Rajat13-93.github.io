@@ -3,14 +3,11 @@ Welcome to my personal website! This repository contains the source code for my 
 🌟 Live Website
 Visit the site here: https://rajat13-93.github.io/
 
-📚 Table of Contents
-About
-Features
-Getting Started
-Project Structure
-Customization
-Contributing
-Deployment
+📚 Table of Contents\\
+About\\
+Research\\
+Publication\\
+Experience\\
 Contact
 License
 📝 About
