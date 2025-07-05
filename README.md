@@ -30,28 +30,20 @@ Contact information
 To run the site locally:
 
 Clone the repository
+
 bash
+
 git clone https://github.com/Rajat13-93/Rajat13-93.github.io.git
+
 Navigate to the project folder
+
 bash
+
 cd Rajat13-93.github.io
+
 Open index.html in your browser
+
 No installation or server setup is required.
-
-📁 Project Structure
-text
-/
-├── index.html         # Main homepage
-
-├── about.html         # About me section 
-
-├── projects.html      # Portfolio/projects
-
-├── contact.html       # Contact information 
-
-├── assets/            # Images, favicon, etc.
-
-└── README.md          # This file
 
 🎨 Customization
 
