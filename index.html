@@ -3,383 +3,1864 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajat &ndash; Postdoctoral Researcher, Theoretical Quantum Physics</title>
-    <meta name="description" content="Rajat &ndash; postdoctoral researcher in theoretical physics working on ultracold quantum gases, supersolidity, nonequilibrium dynamics and correlated lattice bosons.">
+
+    <title>Rajat | Theoretical Quantum Physicist</title>
+
+    <meta
+        name="description"
+        content="Rajat is an ISF Postdoctoral Fellow and theoretical physicist working on ultracold quantum gases, supersolidity, nonequilibrium dynamics, correlated lattice bosons and quantum chaos."
+    >
+
+    <meta name="author" content="Rajat">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rajat | Theoretical Quantum Physicist">
+    <meta
+        property="og:description"
+        content="Research in ultracold quantum gases, supersolidity, nonequilibrium quantum dynamics and correlated Bose systems."
+    >
+    <meta property="og:type" content="website">
+
+    <!-- Twitter / social cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Rajat | Theoretical Quantum Physicist">
+    <meta
+        name="twitter:description"
+        content="Theoretical quantum physics: ultracold gases, supersolidity, nonequilibrium dynamics and correlated bosons."
+    >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif']
+                    },
+                    boxShadow: {
+                        soft: '0 12px 40px rgba(15, 23, 42, 0.07)',
+                        card: '0 8px 28px rgba(15, 23, 42, 0.06)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+        :root {
+            color-scheme: light;
         }
-        h1, h2, h3, h4 {
+
+        html {
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at 90% 5%,
+                    rgba(37, 99, 235, 0.06),
+                    transparent 28rem
+                ),
+                radial-gradient(
+                    circle at 5% 35%,
+                    rgba(14, 116, 144, 0.04),
+                    transparent 32rem
+                ),
+                #f8fafc;
+        }
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Lora', serif;
         }
-        .icon-link:hover svg {
-            transform: scale(1.15);
-            transition: transform 0.2s ease-in-out;
+
+        ::selection {
+            background: #bfdbfe;
+            color: #0f172a;
         }
-        .section-bg {
-            background-color: #ffffff;
+
+        .academic-card {
+            transition:
+                transform 180ms ease,
+                box-shadow 180ms ease,
+                border-color 180ms ease;
         }
-        .card-hover {
-             transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        .academic-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+            border-color: #cbd5e1;
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+
+        .nav-link.active {
+            color: #2563eb;
+        }
+
+        .publication-filter[aria-pressed="true"] {
+            background: #0f172a;
+            color: #fff;
+            border-color: #0f172a;
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(37, 99, 235, 0.35);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
 
-    <!-- Header & Navigation -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-xl font-bold text-slate-900">Rajat</h1>
-                <p class="text-sm text-slate-600">Postdoctoral Researcher &middot; Theoretical Quantum Physics</p>
+<body class="font-sans text-slate-800 antialiased">
+
+    <!-- Skip navigation -->
+    <a
+        href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg"
+    >
+        Skip to main content
+    </a>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header
+        class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl"
+    >
+        <nav
+            class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 md:px-8"
+            aria-label="Primary navigation"
+        >
+            <a href="#about" class="group">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 font-serif text-lg font-bold text-white"
+                        aria-hidden="true"
+                    >
+                        R
+                    </div>
+
+                    <div>
+                        <p
+                            class="font-serif text-lg font-bold leading-tight text-slate-950 transition group-hover:text-blue-700"
+                        >
+                            Rajat
+                        </p>
+                        <p class="hidden text-xs text-slate-500 sm:block">
+                            Theoretical Quantum Physics
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <div
+                class="hidden items-center gap-7 text-sm font-medium md:flex"
+                id="desktop-navigation"
+            >
+                <a class="nav-link text-slate-600 hover:text-blue-700" href="#about">
+                    About
+                </a>
+
+                <a class="nav-link text-slate-600 hover:text-blue-700" href="#research">
+                    Research
+                </a>
+
+                <a
+                    class="nav-link text-slate-600 hover:text-blue-700"
+                    href="#publications"
+                >
+                    Publications
+                </a>
+
+                <a
+                    class="nav-link text-slate-600 hover:text-blue-700"
+                    href="#experience"
+                >
+                    Experience
+                </a>
+
+                <a class="nav-link text-slate-600 hover:text-blue-700" href="#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="cv_rajat.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
+                >
+                    <i data-lucide="file-text" class="h-4 w-4"></i>
+                    CV
+                </a>
             </div>
-            <div class="hidden md:flex items-center space-x-5 lg:space-x-7">
-                <a href="#about" class="text-slate-600 hover:text-blue-600 transition">About</a>
-                <a href="#research" class="text-slate-600 hover:text-blue-600 transition">Research</a>
-                <a href="#skills" class="text-slate-600 hover:text-blue-600 transition">Skills</a>
-                <a href="#publications" class="text-slate-600 hover:text-blue-600 transition">Publications</a>
-                <a href="#experience" class="text-slate-600 hover:text-blue-600 transition">Experience</a>
-                <a href="#contact" class="text-slate-600 hover:text-blue-600 transition">Contact</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden">
-                <i data-lucide="menu"></i>
+
+            <button
+                id="mobile-menu-button"
+                type="button"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 md:hidden"
+                aria-label="Open navigation menu"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+            >
+                <i data-lucide="menu" class="h-6 w-6"></i>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#about" class="block py-2 text-slate-600 hover:text-blue-600">About</a>
-             <a href="#research" class="block py-2 text-slate-600 hover:text-blue-600">Research</a>
-             <a href="#skills" class="block py-2 text-slate-600 hover:text-blue-600">Skills</a>
-             <a href="#publications" class="block py-2 text-slate-600 hover:text-blue-600">Publications</a>
-             <a href="#experience" class="block py-2 text-slate-600 hover:text-blue-600">Experience</a>
-             <a href="#contact" class="block py-2 text-slate-600 hover:text-blue-600">Contact</a>
+
+        <div
+            id="mobile-menu"
+            class="hidden border-t border-slate-200 bg-white px-5 py-4 md:hidden"
+        >
+            <div class="mx-auto flex max-w-7xl flex-col gap-1">
+                <a
+                    href="#about"
+                    class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700"
+                >
+                    About
+                </a>
+
+                <a
+                    href="#research"
+                    class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700"
+                >
+                    Research
+                </a>
+
+                <a
+                    href="#publications"
+                    class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700"
+                >
+                    Publications
+                </a>
+
+                <a
+                    href="#experience"
+                    class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700"
+                >
+                    Experience
+                </a>
+
+                <a
+                    href="#contact"
+                    class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-700"
+                >
+                    Contact
+                </a>
+
+                <a
+                    href="cv_rajat.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 py-3 font-semibold text-white"
+                >
+                    <i data-lucide="download" class="h-4 w-4"></i>
+                    Download CV
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6">
+    <main id="main-content">
 
-        <!-- About Section -->
-        <section id="about" class="py-20 md:py-28 scroll-mt-24">
-            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
-                <div class="md:w-2/3">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">About Me</h2>
-                    <p class="mb-4 text-lg leading-relaxed text-slate-700">
-                        I am a theoretical physicist and an <strong>ISF Postdoctoral Fellow</strong> in the Department of Physics at <strong>Ben-Gurion University of the Negev</strong>, Israel, working with Prof.&nbsp;Doron Cohen. My research sits at the intersection of quantum gases, condensed matter and nonequilibrium statistical physics, with a continuing focus on exotic states of matter such as supersolids.
+        <!-- =====================================================
+             HERO / ABOUT
+        ====================================================== -->
+
+        <section id="about" class="scroll-mt-24">
+            <div
+                class="mx-auto grid min-h-[calc(100vh-72px)] max-w-7xl items-center gap-14 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-[1.15fr_.85fr]"
+            >
+                <!-- Text -->
+                <div>
+                    <div
+                        class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-sm font-semibold text-blue-800"
+                    >
+                        <span
+                            class="h-2 w-2 rounded-full bg-blue-600"
+                            aria-hidden="true"
+                        ></span>
+                        ISF Postdoctoral Fellow
+                    </div>
+
+                    <h1
+                        class="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl"
+                    >
+                        Theoretical physics of
+                        <span class="text-blue-700">
+                            interacting quantum matter
+                        </span>
+                    </h1>
+
+                    <p
+                        class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl"
+                    >
+                        I study emergent phenomena in ultracold quantum gases and
+                        correlated bosonic systems, with particular interests in
+                        <strong class="font-semibold text-slate-900">
+                            supersolidity
+                        </strong>,
+                        <strong class="font-semibold text-slate-900">
+                            nonequilibrium dynamics
+                        </strong>,
+                        collective excitations and
+                        <strong class="font-semibold text-slate-900">
+                            quantum chaos
+                        </strong>.
                     </p>
-                    <p class="mb-6 text-lg leading-relaxed text-slate-700">
-                        My doctoral work at IIT&nbsp;Ropar explored spin-orbit-coupled spinor Bose&ndash;Einstein condensates; their collective excitations, quantum phase transitions, nonequilibrium coarsening dynamics and finite-temperature behaviour. I now extend that toolkit to correlated lattice bosons, studying metastability and quantum chaos in Bose&ndash;Hubbard systems. I build and use analytical and large-scale numerical methods to connect many-body theory with observables that experiments can actually measure.
+
+                    <p class="mt-5 max-w-3xl leading-7 text-slate-600">
+                        I am currently an ISF Postdoctoral Fellow in the Department
+                        of Physics at
+                        <strong class="font-semibold text-slate-800">
+                            Ben-Gurion University of the Negev
+                        </strong>,
+                        working with Prof.&nbsp;Doron Cohen. My work combines
+                        analytical many-body theory, semiclassical methods and
+                        large-scale numerical simulations to connect microscopic
+                        models with experimentally accessible observables.
                     </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="cv_rajat.pdf" target="_blank" class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-md hover:shadow-lg">
-                            <i data-lucide="download" class="mr-2 h-5 w-5"></i>
-                            Download CV
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a
+                            href="cv_rajat.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                        >
+                            <i data-lucide="file-down" class="h-5 w-5"></i>
+                            Curriculum Vitae
                         </a>
-                        <a href="https://scholar.google.com/citations?user=5HxdwzAAAAAJ&hl=en" target="_blank" class="inline-flex items-center bg-white text-slate-800 border border-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition shadow-sm">
-                            <i data-lucide="graduation-cap" class="mr-2 h-5 w-5"></i>
+
+                        <a
+                            href="https://scholar.google.com/citations?user=5HxdwzAAAAAJ&hl=en"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
+                        >
+                            <i data-lucide="graduation-cap" class="h-5 w-5"></i>
                             Google Scholar
                         </a>
-                    </div>
-                </div>
-                <div class="md:w-1/3 flex justify-center">
-                    <img src="Rajat.jpeg" alt="Rajat" onerror="this.onerror=null;this.src='https://placehold.co/400x400/E2E8F0/4A5568?text=Rajat';" class="rounded-full h-64 w-64 md:h-80 md:w-80 object-cover shadow-xl border-8 border-white">
-                </div>
-            </div>
-        </section>
 
-        <!-- Research Section -->
-        <section id="research" class="py-20 md:py-24 scroll-mt-24 section-bg rounded-xl">
-            <div class="px-6">
-                <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Research Interests</h2>
-                <div id="research-interests-container" class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <div class="bg-slate-50 p-6 rounded-lg card-hover">
-                        <div class="flex items-center text-blue-600 mb-3">
-                            <i data-lucide="atom" class="h-8 w-8 shrink-0"></i>
-                            <h3 class="text-xl font-bold ml-4 text-slate-900">Ultracold Quantum Gases and Supersolidity</h3>
-                        </div>
-                        <p class="text-slate-600">Ground-state properties, quantum phase transitions, collective excitations and supersolid order in spin-orbit-coupled, coherently coupled and dipolar Bose&ndash;Einstein condensates.</p>
+                        <a
+                            href="https://orcid.org/0000-0002-4882-1313"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
+                        >
+                            ORCID
+                            <i data-lucide="external-link" class="h-4 w-4"></i>
+                        </a>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-lg card-hover">
-                        <div class="flex items-center text-blue-600 mb-3">
-                            <i data-lucide="zap" class="h-8 w-8 shrink-0"></i>
-                            <h3 class="text-xl font-bold ml-4 text-slate-900">Nonequilibrium and Finite-Temperature Dynamics</h3>
-                        </div>
-                        <p class="text-slate-600">Universal coarsening and defect dynamics after quenches; stochastic classical-field methods (SGPE/SPGPE) for real-time thermal dynamics; Hartree&ndash;Fock&ndash;Bogoliubov&ndash;Popov theory for spinor condensates.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg card-hover">
-                        <div class="flex items-center text-blue-600 mb-3">
-                            <i data-lucide="grid-3x3" class="h-8 w-8 shrink-0"></i>
-                            <h3 class="text-xl font-bold ml-4 text-slate-900">Correlated Lattice Bosons and Quantum Chaos</h3>
-                        </div>
-                        <p class="text-slate-600">Metastability, spectrum tomography and mixed regular&ndash;chaotic dynamics in Bose&ndash;Hubbard rings and chains; the breakdown of mean-field descriptions in finite lattice systems.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg card-hover">
-                        <div class="flex items-center text-blue-600 mb-3">
-                            <i data-lucide="git-merge" class="h-8 w-8 shrink-0"></i>
-                            <h3 class="text-xl font-bold ml-4 text-slate-900">Quantum Fluids of Light and Polaron Physics</h3>
-                        </div>
-                        <p class="text-slate-600">Nonequilibrium dynamics and superfluidity in exciton&ndash;polariton condensates; impurity physics in BECs and driven&ndash;dissipative systems.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Research Highlights Section -->
-        <section id="highlights" class="py-20 md:py-24 scroll-mt-24">
-            <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Research Highlights</h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white p-6 rounded-lg card-hover shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Universal Coarsening Dynamics</h3>
-                    <p class="text-slate-600">Showed that magnetic domains in a quenched quasi-2D spin-1 spin-orbit-coupled condensate grow as <em>L</em>(<em>t</em>)&nbsp;&sim;&nbsp;<em>t</em><sup>0.66</sup>, placing these gases in the inertial-hydrodynamic binary-fluid universality class.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg card-hover shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Temperature Control of Supersolid Order</h3>
-                    <p class="text-slate-600">Found that rising temperature can <em>stabilise and enlarge</em> the supersolid stripe phase rather than melt it; a counter-intuitive route to shifting quantum critical points with thermal fluctuations.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg card-hover shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Collective-Mode Diagnostics</h3>
-                    <p class="text-slate-600">Computed low-lying excitation modes (dipole, breathing, spin-dipole) to map phase boundaries through mode softening and identify roton-like instabilities; direct signatures for experimental verification.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg card-hover shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Metastability and Quantum Chaos</h3>
-                    <p class="text-slate-600">Combined many-body exact diagonalisation with semiclassical &ldquo;spectrum tomography&rdquo; to connect metastable currents and mixed regular&ndash;chaotic dynamics in Bose&ndash;Hubbard rings and chains.</p>
-                </div>
-            </div>
-        </section>
+                    <div
+                        class="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-slate-200 pt-6 text-sm text-slate-500"
+                    >
+                        <span class="inline-flex items-center gap-2">
+                            <i data-lucide="map-pin" class="h-4 w-4"></i>
+                            Be'er Sheva, Israel
+                        </span>
 
-        <!-- Awards Section -->
-        <section id="awards" class="py-16 md:py-20 scroll-mt-24 section-bg rounded-xl">
-            <div class="px-6">
-                <h2 class="text-4xl font-bold text-slate-900 mb-10 text-center">Awards &amp; Distinctions</h2>
-                <div class="max-w-4xl mx-auto space-y-4">
-                    <div class="bg-slate-50 p-5 rounded-lg card-hover border-l-4 border-amber-500">
-                        <p class="font-bold text-slate-900">Seal of Excellence &mdash; European Commission (2026)</p>
-                        <p class="text-slate-600 mt-1">Awarded to the Marie Sk&#322;odowska-Curie Postdoctoral Fellowship proposal <em>SuperSQF &ndash; Supersolidity in Quantum Fluids</em>, scored <strong>92.6/100</strong>.</p>
-                    </div>
-                    <div class="bg-slate-50 p-5 rounded-lg card-hover border-l-4 border-blue-500">
-                        <p class="font-bold text-slate-900">Best Oral Presentation Award &mdash; PHYCON 2025</p>
-                        <p class="text-slate-600 mt-1">IIT Ropar, India (March 2025).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <span class="inline-flex items-center gap-2">
+                            <i data-lucide="building-2" class="h-4 w-4"></i>
+                            Ben-Gurion University
+                        </span>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-24 scroll-mt-24">
-            <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Skills &amp; Expertise</h2>
-            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Technical Skills</h3>
-                    <div class="space-y-5">
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <h4 class="font-semibold text-lg mb-2">Programming Languages</h4>
-                            <div class="flex flex-wrap gap-2 text-sm">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Fortran</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Mathematica</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Python</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">MATLAB</span>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <h4 class="font-semibold text-lg mb-2">Numerical Libraries &amp; HPC</h4>
-                            <div class="flex flex-wrap gap-2 text-sm">
-                                <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded-full">LAPACK</span>
-                                <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded-full">ARPACK</span>
-                                <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded-full">BLAS</span>
-                                <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded-full">FFTW</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">OpenMP</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">OpenACC (GPU)</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">HPC Clusters (Slurm)</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Bash</span>
-                            </div>
-                        </div>
+                        <span class="inline-flex items-center gap-2">
+                            <i data-lucide="atom" class="h-4 w-4"></i>
+                            Quantum many-body theory
+                        </span>
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Theoretical Expertise</h3>
-                     <div class="space-y-5">
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <h4 class="font-semibold text-lg mb-2">Core Theories</h4>
-                            <p class="text-slate-600">Quantum many-body theory; mean-field and Bogoliubov&ndash;de Gennes (BdG) theory; Hartree&ndash;Fock&ndash;Bogoliubov&ndash;Popov (HFBP) theory; nonequilibrium scaling and universality.</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <h4 class="font-semibold text-lg mb-2">Numerical &amp; Simulation Methods</h4>
-                             <p class="text-slate-600">Stochastic and projected Gross&ndash;Pitaevskii equations (SGPE/SPGPE); finite-difference, basis-expansion and pseudospectral solvers; large eigenvalue problems and Lanczos exact diagonalisation; semiclassical phase-space methods.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Publications Section -->
-        <section id="publications" class="py-20 md:py-24 scroll-mt-24 section-bg rounded-xl">
-            <div class="px-6">
-                <h2 class="text-4xl font-bold text-slate-900 mb-4 text-center">Peer-Reviewed Articles</h2>
-                  
-                    <div class="space-y-6">
-                        <script>
-                            // Sorted newest-first automatically. "accepted" entries are flagged via p.note.
-                            const publications = [
-                                { year: 2026, journal: 'Physical Review A', note: 'accepted', title: 'Spin and density excitations of one-dimensional self-bound Bose&ndash;Bose droplets', authors: 'Ritu, <strong>Rajat</strong>, M. Singh, R. K. Gupta and Sandeep Gautam', link: 'https://doi.org/10.1103/w68w-68w5', arxiv: 'https://arxiv.org/abs/2603.00987' },
-                                { year: 2026, journal: 'Physical Review Research 8, 033024', title: 'Metastability, chaos, and spectrum tomography for Bose&ndash;Hubbard rings and chains', authors: '<strong>Rajat</strong> and Doron Cohen', link: 'https://doi.org/10.1103/dbpg-938z', arxiv: 'https://arxiv.org/abs/2603.23109' },
-                                { year: 2026, journal: 'Physical Review A 113, 043310', title: 'Finite-temperature phase diagram and collective modes of coherently coupled Bose mixtures', authors: 'Sunilkumar V, <strong>Rajat</strong>, Sandeep Gautam and Arko Roy', link: 'https://doi.org/10.1103/l529-9544', arxiv: 'https://arxiv.org/abs/2510.11671' },
-                                { year: 2025, journal: 'New Journal of Physics 27, 043005', title: 'Thermal amplification and melting of phases in spin-orbit-coupled spin-1 Bose&ndash;Einstein condensates', authors: 'Ritu, <strong>Rajat</strong>, Arko Roy and Sandeep Gautam', link: 'https://doi.org/10.1088/1367-2630/adc6ae', arxiv: 'https://arxiv.org/abs/2412.19285' },
-                                { year: 2025, journal: 'Physical Review A 111, 033316', title: 'Collective excitations and universal coarsening dynamics of a spin-orbit-coupled spin-1 Bose&ndash;Einstein condensate', authors: '<strong>Rajat</strong>, Paramjeet Banger and Sandeep Gautam', link: 'https://doi.org/10.1103/PhysRevA.111.033316', arxiv: 'https://arxiv.org/abs/2410.22178' },
-                                { year: 2025, journal: 'Physical Review A 111, 023311', title: 'Excitations of a supersolid annular stripe phase in a spin-orbital-angular-momentum-coupled spin-1 Bose&ndash;Einstein condensate', authors: 'Paramjeet Banger, <strong>Rajat</strong> and Sandeep Gautam', link: 'https://doi.org/10.1103/PhysRevA.111.023311', arxiv: 'https://arxiv.org/abs/2411.17586' },
-                                { year: 2024, journal: 'Physical Review A 109, 033319', title: 'Temperature-induced supersolidity in spin-orbit-coupled Bose gases', authors: '<strong>Rajat</strong>, Ritu, Arko Roy and Sandeep Gautam', link: 'https://doi.org/10.1103/PhysRevA.109.033319', arxiv: 'https://arxiv.org/abs/2312.08719' },
-                                { year: 2023, journal: 'Physical Review A 108, 043310', title: 'Quantum phases and the spectrum of collective modes in a spin-1 Bose&ndash;Einstein condensate with spin-orbital-angular-momentum coupling', authors: 'Paramjeet Banger, <strong>Rajat</strong>, Arko Roy and Sandeep Gautam', link: 'https://doi.org/10.1103/PhysRevA.108.043310', arxiv: 'https://arxiv.org/abs/2306.14669' },
-                                { year: 2022, journal: 'Physical Review A 106, 013304', title: 'Collective excitations in cigar-shaped spin-orbit-coupled spin-1 Bose&ndash;Einstein condensates', authors: '<strong>Rajat</strong>, Arko Roy and Sandeep Gautam', link: 'https://doi.org/10.1103/PhysRevA.106.013304', arxiv: 'https://arxiv.org/abs/2204.06898' },
-                            ];
-                            publications.sort((a, b) => b.year - a.year);
-                            const container = document.currentScript.parentElement;
-                            publications.forEach(p => {
-                                const div = document.createElement('div');
-                                div.className = 'bg-white p-6 rounded-lg shadow-md card-hover';
-                                const badge = p.note ? ` <span class="ml-2 align-middle text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">accepted</span>` : '';
-                                div.innerHTML = `
-                                    <p class="text-slate-600 font-medium">${p.journal} (${p.year})${badge}</p>
-                                    <h3 class="text-lg font-semibold my-1 text-slate-900"><a href="${p.link}" target="_blank" class="hover:text-blue-600 transition">${p.title}</a></h3>
-                                    <p class="text-slate-700">${p.authors}</p>
-                                    <div class="mt-4 flex items-center gap-4 flex-wrap">
-                                        <a href="${p.link}" target="_blank" class="text-blue-600 hover:underline">Read Paper</a> &bull;
-                                        <a href="${p.arxiv}" target="_blank" class="text-blue-600 hover:underline">View on arXiv</a>
+                <!-- Profile -->
+                <div class="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
+                    <div
+                        class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-3 shadow-soft"
+                    >
+                        <div
+                            class="relative aspect-[4/4.6] overflow-hidden rounded-[1.55rem] bg-slate-100"
+                        >
+                            <img
+                                id="profile-image"
+                                src="Rajat.jpeg"
+                                alt="Portrait of Rajat"
+                                class="h-full w-full object-cover"
+                            >
+
+                            <div
+                                id="profile-fallback"
+                                class="absolute inset-0 hidden items-center justify-center bg-slate-100"
+                            >
+                                <div class="text-center">
+                                    <div
+                                        class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-900 font-serif text-4xl font-bold text-white"
+                                    >
+                                        R
                                     </div>
-                                `;
-                                container.appendChild(div);
-                            });
-                        </script>
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-slate-800 mt-12 mb-6">Manuscripts in Preparation</h3>
-                    <div class="space-y-6">
-                         <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                            <p class="text-slate-700"><strong>Rajat</strong>, Ritu and Sandeep Gautam, <em>Universal coarsening dynamics of the supersolid stripe phase of spin-orbit-coupled spinor Bose&ndash;Einstein condensates</em>.</p>
+                                    <p class="mt-4 font-serif text-xl font-bold">
+                                        Rajat
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                            <p class="text-slate-700">Sunilkumar V, <strong>Rajat</strong>, Sandeep Gautam and Arko Roy, <em>Thermodynamics of trapped coherently coupled Bose gases</em>.</p>
+
+                        <div class="px-3 pb-3 pt-5">
+                            <p
+                                class="text-xs font-bold uppercase tracking-[0.17em] text-blue-700"
+                            >
+                                Current research
+                            </p>
+
+                            <p
+                                class="mt-2 font-serif text-xl font-semibold leading-snug text-slate-950"
+                            >
+                                Correlated bosons, metastability and quantum chaos
+                            </p>
+
+                            <p class="mt-2 text-sm leading-6 text-slate-600">
+                                Bose–Hubbard rings and chains · spectrum tomography ·
+                                semiclassical–quantum correspondence
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Conference Presentations Section -->
-        <section id="presentations" class="py-20 md:py-24 scroll-mt-24">
-            <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Conference Presentations</h2>
-            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Oral Presentations</h3>
+        <!-- =====================================================
+             RESEARCH
+        ====================================================== -->
+
+        <section
+            id="research"
+            class="scroll-mt-24 border-y border-slate-200 bg-white"
+        >
+            <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+
+                <div
+                    class="mb-12 grid gap-6 lg:grid-cols-[.8fr_1.2fr] lg:items-end"
+                >
+                    <div>
+                        <p
+                            class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700"
+                        >
+                            Research
+                        </p>
+
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl"
+                        >
+                            Research directions
+                        </h2>
+                    </div>
+
+                    <p class="max-w-2xl text-base leading-7 text-slate-600 lg:ml-auto">
+                        My research spans equilibrium and nonequilibrium many-body
+                        physics, with emphasis on systems in which competing
+                        interactions, symmetry breaking and correlations generate
+                        experimentally observable emergent behaviour.
+                    </p>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-2">
+
+                    <article
+                        class="academic-card rounded-2xl border border-slate-200 bg-slate-50/70 p-7"
+                    >
+                        <div
+                            class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-700"
+                        >
+                            <i data-lucide="atom" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-950">
+                            Ultracold Quantum Gases & Supersolidity
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Ground-state properties, quantum phase transitions,
+                            collective excitations and supersolid order in
+                            spin-orbit-coupled, coherently coupled and dipolar
+                            Bose–Einstein condensates.
+                        </p>
+                    </article>
+
+                    <article
+                        class="academic-card rounded-2xl border border-slate-200 bg-slate-50/70 p-7"
+                    >
+                        <div
+                            class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-100 text-cyan-800"
+                        >
+                            <i data-lucide="activity" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-950">
+                            Nonequilibrium & Finite-Temperature Dynamics
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Universal coarsening and defect dynamics after quenches;
+                            stochastic classical-field methods (SGPE/SPGPE) for
+                            real-time thermal dynamics; and
+                            Hartree–Fock–Bogoliubov–Popov theory for spinor
+                            condensates.
+                        </p>
+                    </article>
+
+                    <article
+                        class="academic-card rounded-2xl border border-slate-200 bg-slate-50/70 p-7"
+                    >
+                        <div
+                            class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-100 text-indigo-700"
+                        >
+                            <i data-lucide="grid-3x3" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-950">
+                            Correlated Lattice Bosons & Quantum Chaos
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Metastability, spectrum tomography and mixed
+                            regular–chaotic dynamics in Bose–Hubbard rings and
+                            chains, including the breakdown of mean-field
+                            descriptions in finite lattice systems.
+                        </p>
+                    </article>
+
+                    <article
+                        class="academic-card rounded-2xl border border-slate-200 bg-slate-50/70 p-7"
+                    >
+                        <div
+                            class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100 text-violet-700"
+                        >
+                            <i data-lucide="waves" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-950">
+                            Quantum Fluids of Light & Polaron Physics
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Nonequilibrium dynamics and superfluidity in
+                            exciton–polariton condensates, together with impurity
+                            physics in Bose–Einstein condensates and
+                            driven–dissipative systems.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             RESEARCH HIGHLIGHTS
+        ====================================================== -->
+
+        <section id="highlights" class="scroll-mt-24">
+            <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+
+                <div class="mb-12 max-w-3xl">
+                    <p
+                        class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700"
+                    >
+                        Selected results
+                    </p>
+
+                    <h2
+                        class="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl"
+                    >
+                        Research highlights
+                    </h2>
+                </div>
+
+                <div class="grid gap-5 lg:grid-cols-2">
+
+                    <article
+                        class="academic-card relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-card"
+                    >
+                        <div
+                            class="absolute inset-y-0 left-0 w-1 bg-blue-600"
+                            aria-hidden="true"
+                        ></div>
+
+                        <p
+                            class="text-xs font-bold uppercase tracking-[0.15em] text-blue-700"
+                        >
+                            Nonequilibrium universality
+                        </p>
+
+                        <h3 class="mt-3 text-xl font-bold text-slate-950">
+                            Universal coarsening dynamics
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Showed that magnetic domains in a quenched quasi-2D
+                            spin-1 spin-orbit-coupled condensate grow as
+                            <em>L</em>(<em>t</em>) ∼ <em>t</em><sup>0.66</sup>,
+                            placing these gases in the inertial-hydrodynamic
+                            binary-fluid universality class.
+                        </p>
+                    </article>
+
+                    <article
+                        class="academic-card relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-card"
+                    >
+                        <div
+                            class="absolute inset-y-0 left-0 w-1 bg-cyan-600"
+                            aria-hidden="true"
+                        ></div>
+
+                        <p
+                            class="text-xs font-bold uppercase tracking-[0.15em] text-cyan-700"
+                        >
+                            Finite-temperature quantum matter
+                        </p>
+
+                        <h3 class="mt-3 text-xl font-bold text-slate-950">
+                            Temperature control of supersolid order
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Found that rising temperature can
+                            <em>stabilise and enlarge</em> the supersolid stripe
+                            phase rather than simply melt it, providing a
+                            counter-intuitive route to shifting phase boundaries
+                            through thermal fluctuations.
+                        </p>
+                    </article>
+
+                    <article
+                        class="academic-card relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-card"
+                    >
+                        <div
+                            class="absolute inset-y-0 left-0 w-1 bg-indigo-600"
+                            aria-hidden="true"
+                        ></div>
+
+                        <p
+                            class="text-xs font-bold uppercase tracking-[0.15em] text-indigo-700"
+                        >
+                            Spectroscopy
+                        </p>
+
+                        <h3 class="mt-3 text-xl font-bold text-slate-950">
+                            Collective-mode diagnostics
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Computed low-lying dipole, breathing and spin-dipole
+                            excitations to identify phase boundaries through mode
+                            softening and roton-like instabilities, providing
+                            experimentally accessible signatures of quantum phases.
+                        </p>
+                    </article>
+
+                    <article
+                        class="academic-card relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-card"
+                    >
+                        <div
+                            class="absolute inset-y-0 left-0 w-1 bg-violet-600"
+                            aria-hidden="true"
+                        ></div>
+
+                        <p
+                            class="text-xs font-bold uppercase tracking-[0.15em] text-violet-700"
+                        >
+                            Many-body quantum chaos
+                        </p>
+
+                        <h3 class="mt-3 text-xl font-bold text-slate-950">
+                            Metastability & spectrum tomography
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            Combined many-body exact diagonalisation with
+                            semiclassical spectrum tomography to connect metastable
+                            currents with mixed regular–chaotic dynamics in
+                            Bose–Hubbard rings and chains.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             PUBLICATIONS
+        ====================================================== -->
+
+        <section
+            id="publications"
+            class="scroll-mt-24 border-y border-slate-200 bg-white"
+        >
+            <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+
+                <div
+                    class="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+                >
+                    <div>
+                        <p
+                            class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700"
+                        >
+                            Publications
+                        </p>
+
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl"
+                        >
+                            Peer-reviewed articles
+                        </h2>
+
+                        <p class="mt-3 text-slate-600">
+                            <span id="publication-count"></span>
+                            peer-reviewed articles, newest first.
+                        </p>
+                    </div>
+
+                    <a
+                        href="https://scholar.google.com/citations?user=5HxdwzAAAAAJ&hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900"
+                    >
+                        Complete Google Scholar profile
+                        <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+                    </a>
+                </div>
+
+                <div
+                    id="publication-filters"
+                    class="mb-8 flex flex-wrap gap-2"
+                    aria-label="Filter publications by year"
+                ></div>
+
+                <ol id="publication-list" class="space-y-4"></ol>
+
+                <div class="mt-14 border-t border-slate-200 pt-10">
+                    <h3 class="text-2xl font-bold text-slate-950">
+                        Manuscripts in preparation
+                    </h3>
+
+                    <div class="mt-6 space-y-4">
+                        <article
+                            class="rounded-xl border border-slate-200 bg-slate-50 p-6"
+                        >
+                            <p class="leading-7 text-slate-700">
+                                <strong>Rajat</strong>, Ritu and Sandeep Gautam,
+                                <em>
+                                    Universal coarsening dynamics of the supersolid
+                                    stripe phase of spin-orbit-coupled spinor
+                                    Bose–Einstein condensates
+                                </em>.
+                            </p>
+                        </article>
+
+                        <article
+                            class="rounded-xl border border-slate-200 bg-slate-50 p-6"
+                        >
+                            <p class="leading-7 text-slate-700">
+                                Sunilkumar V, <strong>Rajat</strong>, Sandeep Gautam
+                                and Arko Roy,
+                                <em>
+                                    Thermodynamics of trapped coherently coupled Bose
+                                    gases
+                                </em>.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             AWARDS
+        ====================================================== -->
+
+        <section id="awards" class="scroll-mt-24">
+            <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+                <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
+
+                    <div>
+                        <p
+                            class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700"
+                        >
+                            Recognition
+                        </p>
+
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl"
+                        >
+                            Awards & distinctions
+                        </h2>
+                    </div>
+
                     <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Collective excitations and universal coarsening dynamics of a spin-orbit-coupled spin-1 Bose&ndash;Einstein condensate</p>
-                            <p class="text-slate-600"><em>PHYCON 2025, IIT Ropar, India (Mar 2025)</em></p>
-                            <p class="text-sm font-bold text-amber-600 mt-1">&#127942; Best Oral Presentation Award</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Temperature-induced supersolidity in spin-orbit-coupled Bose gases</p>
-                            <p class="text-slate-600"><em>QMAT 2024, IIT Guwahati, India (Dec 2024)</em></p>
-                        </div>
-                         <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Temperature-induced supersolidity in spin-orbit-coupled Bose gases</p>
-                            <p class="text-slate-600"><em>Physics Day, IIT Ropar, India (Mar 2024)</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Poster Presentations</h3>
-                     <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Metastability, chaos and spectrum tomography for Bose&ndash;Hubbard rings and chains</p>
-                            <p class="text-slate-600"><em>Atomtronics 2026, Centro de Ciencias de Benasque Pedro Pascual, Benasque (Huesca), Spain (May&ndash;Jun 2026)</em></p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Temperature-induced supersolidity in spin-orbit-coupled Bose gases</p>
-                            <p class="text-slate-600"><em>International Conference on BEC, SNBNCBS, Kolkata, India (Nov 2024)</em></p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Temperature-induced supersolidity in spin-orbit-coupled Bose gases</p>
-                            <p class="text-slate-600"><em>Ultracold Atoms Japan 2024, OIST, Japan (Apr 2024)</em></p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md card-hover">
-                            <p class="font-semibold text-slate-800">Collective excitations in cigar-shaped spin-orbit-coupled spin-1 BECs</p>
-                            <p class="text-slate-600"><em>Quantum Technologies with Ultracold Atoms, IISER Pune, India (Nov 2023)</em></p>
-                        </div>
+
+                        <article
+                            class="academic-card rounded-2xl border border-slate-200 bg-white p-7 shadow-card"
+                        >
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700"
+                                >
+                                    <i data-lucide="award" class="h-6 w-6"></i>
+                                </div>
+
+                                <div>
+                                    <p class="text-sm font-semibold text-amber-700">
+                                        2026
+                                    </p>
+
+                                    <h3
+                                        class="mt-1 text-xl font-bold text-slate-950"
+                                    >
+                                        Seal of Excellence — European Commission
+                                    </h3>
+
+                                    <p class="mt-3 leading-7 text-slate-600">
+                                        Awarded to the Marie Skłodowska-Curie
+                                        Postdoctoral Fellowship proposal
+                                        <em>
+                                            SuperSQF – Supersolidity in Quantum
+                                            Fluids
+                                        </em>,
+                                        scored
+                                        <strong class="text-slate-800">
+                                            92.6/100
+                                        </strong>.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article
+                            class="academic-card rounded-2xl border border-slate-200 bg-white p-7 shadow-card"
+                        >
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700"
+                                >
+                                    <i data-lucide="trophy" class="h-6 w-6"></i>
+                                </div>
+
+                                <div>
+                                    <p class="text-sm font-semibold text-blue-700">
+                                        March 2025
+                                    </p>
+
+                                    <h3
+                                        class="mt-1 text-xl font-bold text-slate-950"
+                                    >
+                                        Best Oral Presentation Award
+                                    </h3>
+
+                                    <p class="mt-2 text-slate-600">
+                                        PHYCON 2025 · IIT Ropar, India
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 md:py-24 scroll-mt-24 section-bg rounded-xl">
-            <div class="px-6">
-                <h2 class="text-4xl font-bold text-slate-900 mb-12 text-center">Experience &amp; Education</h2>
-                <div class="max-w-3xl mx-auto border-l-2 border-blue-500 pl-10 space-y-12">
-                    <div class="relative card-hover">
-                        <div class="absolute -left-[46px] top-1 h-5 w-5 rounded-full bg-blue-600 border-4 border-white"></div>
-                        <p class="text-sm font-medium text-blue-600">Oct 2025 &ndash; present</p>
-                        <h3 class="text-xl font-bold text-slate-900 mt-1">ISF Postdoctoral Fellow</h3>
-                        <p class="text-slate-700 font-semibold">Ben-Gurion University of the Negev, Be&rsquo;er Sheva, Israel</p>
-                        <p class="text-slate-600 mt-2">Strongly correlated lattice bosons: metastability, quantum chaos and phase transitions in Bose&ndash;Hubbard rings and chains (with Prof.&nbsp;Doron Cohen).</p>
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section
+            id="skills"
+            class="scroll-mt-24 border-y border-slate-200 bg-slate-950 text-slate-200"
+        >
+            <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+
+                <div class="mb-12 max-w-3xl">
+                    <p
+                        class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-300"
+                    >
+                        Methods
+                    </p>
+
+                    <h2 class="text-3xl font-bold text-white md:text-4xl">
+                        Theoretical & computational toolkit
+                    </h2>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-2">
+
+                    <div
+                        class="rounded-2xl border border-slate-700 bg-slate-900/80 p-7"
+                    >
+                        <h3 class="text-xl font-bold text-white">
+                            Many-body theory
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-300">
+                            Quantum many-body theory; mean-field and
+                            Bogoliubov–de Gennes theory;
+                            Hartree–Fock–Bogoliubov–Popov theory; nonequilibrium
+                            scaling, universality and semiclassical phase-space
+                            methods.
+                        </p>
                     </div>
-                    <div class="relative card-hover">
-                        <div class="absolute -left-[46px] top-1 h-5 w-5 rounded-full bg-blue-600 border-4 border-white"></div>
-                        <p class="text-sm font-medium text-blue-600">Jun 2025 &ndash; Oct 2025</p>
-                        <h3 class="text-xl font-bold text-slate-900 mt-1">Visiting Researcher</h3>
-                        <p class="text-slate-700 font-semibold">Indian Institute of Technology Ropar, India</p>
-                        <p class="text-slate-600 mt-2">Collective excitations and finite-temperature dynamics in coupled ultracold gases.</p>
+
+                    <div
+                        class="rounded-2xl border border-slate-700 bg-slate-900/80 p-7"
+                    >
+                        <h3 class="text-xl font-bold text-white">
+                            Numerical methods
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-300">
+                            SGPE/SPGPE methods, finite-difference and pseudospectral
+                            solvers, basis expansion, Lanczos exact diagonalisation,
+                            large eigenvalue problems and real-time nonlinear
+                            evolution.
+                        </p>
                     </div>
-                    <div class="relative card-hover">
-                        <div class="absolute -left-[46px] top-1 h-5 w-5 rounded-full bg-blue-600 border-4 border-white"></div>
-                        <p class="text-sm font-medium text-blue-600">Dec 2019 &ndash; Jun 2025</p>
-                        <h3 class="text-xl font-bold text-slate-900 mt-1">PhD in Physics</h3>
-                        <p class="text-slate-700 font-semibold">Indian Institute of Technology Ropar, India</p>
-                        <p class="text-slate-600 mt-2">Thesis: <em>Collective excitations and coarsening dynamics of spin-orbit-coupled spinor condensates.</em> Advisor: Dr.&nbsp;Sandeep Gautam. Awarded 16 July 2025.</p>
+
+                    <div
+                        class="rounded-2xl border border-slate-700 bg-slate-900/80 p-7"
+                    >
+                        <h3 class="text-xl font-bold text-white">
+                            Programming
+                        </h3>
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                Fortran
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                Python
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                Mathematica
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                MATLAB
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                Bash
+                            </span>
+                        </div>
                     </div>
-                    <div class="relative card-hover">
-                        <div class="absolute -left-[46px] top-1 h-5 w-5 rounded-full bg-blue-600 border-4 border-white"></div>
-                        <p class="text-sm font-medium text-blue-600">Jun 2019 &ndash; Jan 2022</p>
-                        <h3 class="text-xl font-bold text-slate-900 mt-1">Junior Research Fellow</h3>
-                        <p class="text-slate-700 font-semibold">Indian Institute of Technology Ropar, India</p>
+
+                    <div
+                        class="rounded-2xl border border-slate-700 bg-slate-900/80 p-7"
+                    >
+                        <h3 class="text-xl font-bold text-white">
+                            HPC & scientific libraries
+                        </h3>
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                LAPACK
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                ARPACK
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                BLAS
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                FFTW
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                OpenMP
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                OpenACC / GPU
+                            </span>
+
+                            <span
+                                class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm"
+                            >
+                                Slurm
+                            </span>
+                        </div>
                     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             PRESENTATIONS
+        ====================================================== -->
+
+        <section id="presentations" class="scroll-mt-24">
+            <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+
+                <div class="mb-12">
+                    <p
+                        class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700"
+                    >
+                        Scientific communication
+                    </p>
+
+                    <h2
+                        class="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl"
+                    >
+                        Conference presentations
+                    </h2>
+                </div>
+
+                <div class="grid gap-10 lg:grid-cols-2">
+
+                    <!-- Oral -->
+                    <div>
+                        <h3
+                            class="mb-6 flex items-center gap-3 text-xl font-bold text-slate-950"
+                        >
+                            <i
+                                data-lucide="mic-2"
+                                class="h-5 w-5 text-blue-700"
+                            ></i>
+                            Oral presentations
+                        </h3>
+
+                        <div class="space-y-4">
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Collective excitations and universal coarsening
+                                    dynamics of a spin-orbit-coupled spin-1
+                                    Bose–Einstein condensate
+                                </p>
+
+                                <p class="mt-2 text-sm text-slate-600">
+                                    PHYCON 2025 · IIT Ropar, India · March 2025
+                                </p>
+
+                                <p
+                                    class="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-amber-700"
+                                >
+                                    <i data-lucide="award" class="h-4 w-4"></i>
+                                    Best Oral Presentation Award
+                                </p>
+                            </article>
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Temperature-induced supersolidity in
+                                    spin-orbit-coupled Bose gases
+                                </p>
+
+                                <p class="mt-2 text-sm text-slate-600">
+                                    QMAT 2024 · IIT Guwahati, India · December 2024
+                                </p>
+                            </article>
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Temperature-induced supersolidity in
+                                    spin-orbit-coupled Bose gases
+                                </p>
+
+                                <p class="mt-2 text-sm text-slate-600">
+                                    Physics Day · IIT Ropar, India · March 2024
+                                </p>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <!-- Posters -->
+                    <div>
+                        <h3
+                            class="mb-6 flex items-center gap-3 text-xl font-bold text-slate-950"
+                        >
+                            <i
+                                data-lucide="presentation"
+                                class="h-5 w-5 text-blue-700"
+                            ></i>
+                            Poster presentations
+                        </h3>
+
+                        <div class="space-y-4">
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Metastability, chaos and spectrum tomography
+                                    for Bose–Hubbard rings and chains
+                                </p>
+
+                                <p class="mt-2 text-sm leading-6 text-slate-600">
+                                    Atomtronics 2026 · Centro de Ciencias de Benasque
+                                    Pedro Pascual · Benasque, Spain · May–June 2026
+                                </p>
+                            </article>
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Temperature-induced supersolidity in
+                                    spin-orbit-coupled Bose gases
+                                </p>
+
+                                <p class="mt-2 text-sm leading-6 text-slate-600">
+                                    International Conference on BEC · SNBNCBS,
+                                    Kolkata · November 2024
+                                </p>
+                            </article>
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Temperature-induced supersolidity in
+                                    spin-orbit-coupled Bose gases
+                                </p>
+
+                                <p class="mt-2 text-sm leading-6 text-slate-600">
+                                    Ultracold Atoms Japan 2024 · OIST, Japan · April
+                                    2024
+                                </p>
+                            </article>
+
+                            <article
+                                class="academic-card rounded-xl border border-slate-200 bg-white p-6"
+                            >
+                                <p
+                                    class="font-semibold leading-6 text-slate-900"
+                                >
+                                    Collective excitations in cigar-shaped
+                                    spin-orbit-coupled spin-1 BECs
+                                </p>
+
+                                <p class="mt-2 text-sm leading-6 text-slate-600">
+                                    Quantum Technologies with Ultracold Atoms · IISER
+                                    Pune · November 2023
+                                </p>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section
+            id="experience"
+            class="scroll-mt-24 border-y border-slate-200 bg-white"
+        >
+            <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+
+                <div class="mb-14">
+                    <p
+                        class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700"
+                    >
+                        Academic path
+                    </p>
+
+                    <h2
+                        class="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl"
+                    >
+                        Experience & education
+                    </h2>
+                </div>
+
+                <div class="relative ml-3 border-l border-slate-300 pl-8 md:ml-5 md:pl-12">
+
+                    <article class="relative pb-12">
+                        <span
+                            class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-white bg-blue-700 ring-1 ring-blue-200 md:-left-[57px]"
+                        ></span>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wide text-blue-700"
+                        >
+                            Oct 2025 – Present
+                        </p>
+
+                        <h3 class="mt-2 text-xl font-bold text-slate-950">
+                            ISF Postdoctoral Fellow
+                        </h3>
+
+                        <p class="mt-1 font-semibold text-slate-700">
+                            Ben-Gurion University of the Negev · Be'er Sheva,
+                            Israel
+                        </p>
+
+                        <p class="mt-3 max-w-3xl leading-7 text-slate-600">
+                            Strongly correlated lattice bosons: metastability,
+                            quantum chaos and phase transitions in Bose–Hubbard
+                            rings and chains, with Prof.&nbsp;Doron Cohen.
+                        </p>
+                    </article>
+
+                    <article class="relative pb-12">
+                        <span
+                            class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-white bg-slate-500 ring-1 ring-slate-200 md:-left-[57px]"
+                        ></span>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wide text-slate-500"
+                        >
+                            Jun 2025 – Oct 2025
+                        </p>
+
+                        <h3 class="mt-2 text-xl font-bold text-slate-950">
+                            Visiting Researcher
+                        </h3>
+
+                        <p class="mt-1 font-semibold text-slate-700">
+                            Indian Institute of Technology Ropar · India
+                        </p>
+
+                        <p class="mt-3 max-w-3xl leading-7 text-slate-600">
+                            Collective excitations and finite-temperature dynamics
+                            in coupled ultracold gases.
+                        </p>
+                    </article>
+
+                    <article class="relative pb-12">
+                        <span
+                            class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-white bg-slate-500 ring-1 ring-slate-200 md:-left-[57px]"
+                        ></span>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wide text-slate-500"
+                        >
+                            Dec 2019 – Jun 2025
+                        </p>
+
+                        <h3 class="mt-2 text-xl font-bold text-slate-950">
+                            PhD in Physics
+                        </h3>
+
+                        <p class="mt-1 font-semibold text-slate-700">
+                            Indian Institute of Technology Ropar · India
+                        </p>
+
+                        <p class="mt-3 max-w-3xl leading-7 text-slate-600">
+                            Thesis:
+                            <em>
+                                Collective excitations and coarsening dynamics of
+                                spin-orbit-coupled spinor condensates.
+                            </em>
+                            Advisor: Dr.&nbsp;Sandeep Gautam. Degree awarded
+                            16 July 2025.
+                        </p>
+                    </article>
+
+                    <article class="relative">
+                        <span
+                            class="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-white bg-slate-500 ring-1 ring-slate-200 md:-left-[57px]"
+                        ></span>
+
+                        <p
+                            class="text-sm font-bold uppercase tracking-wide text-slate-500"
+                        >
+                            Jun 2019 – Jan 2022
+                        </p>
+
+                        <h3 class="mt-2 text-xl font-bold text-slate-950">
+                            Junior Research Fellow
+                        </h3>
+
+                        <p class="mt-1 font-semibold text-slate-700">
+                            Indian Institute of Technology Ropar · India
+                        </p>
+                    </article>
+
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer / Contact Section -->
-    <footer id="contact" class="bg-slate-800 text-slate-200 scroll-mt-24">
-        <div class="container mx-auto px-6 py-16 text-center">
-            <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
-            <p class="max-w-2xl mx-auto mb-8 text-slate-300">
-                I am always open to collaborations and discussions on supersolidity, nonequilibrium quantum dynamics and correlated lattice systems. Feel free to reach out by email or connect with me on professional networks.
-            </p>
-            <a href="mailto:rajat13sep@gmail.com" class="text-lg text-blue-300 hover:text-blue-200 transition">rajat13sep@gmail.com</a>
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
 
-            <div class="flex justify-center space-x-6 mt-8">
-                <a href="https://scholar.google.com/citations?user=5HxdwzAAAAAJ&hl=en" target="_blank" class="icon-link text-slate-400 hover:text-white transition" aria-label="Google Scholar"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5l12-9.5 7.162 5.151a1 1 0 0 1 .162 1.551L12 18l-6.758-4.231z"/><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg></a>
-                <a href="https://orcid.org/0000-0002-4882-1313" target="_blank" class="icon-link text-slate-400 hover:text-white transition" aria-label="ORCID"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.422.947.947s-.422.947-.947.947a.947.947 0 1 1 0-1.894zM5.56 7.624h3.617v10.04H5.56V7.624zM12.438 7.624h3.617a3.815 3.815 0 0 1 3.815 3.815v2.41a3.815 3.815 0 0 1-3.815 3.815h-3.617V7.624z"/></svg></a>
-                <a href="https://www.linkedin.com/in/rajat-sharma-788a7561/" target="_blank" class="icon-link text-slate-400 hover:text-white transition" aria-label="LinkedIn"><i data-lucide="linkedin" class="h-7 w-7"></i></a>
+    <footer id="contact" class="scroll-mt-24 bg-slate-950 text-slate-300">
+        <div class="mx-auto max-w-6xl px-5 py-20 md:px-8">
+
+            <div
+                class="grid gap-10 border-b border-slate-800 pb-14 md:grid-cols-[1.2fr_.8fr] md:items-end"
+            >
+                <div>
+                    <p
+                        class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-300"
+                    >
+                        Contact
+                    </p>
+
+                    <h2
+                        class="max-w-3xl text-3xl font-bold leading-tight text-white md:text-4xl"
+                    >
+                        Interested in quantum gases, supersolidity or correlated
+                        bosonic systems?
+                    </h2>
+
+                    <p class="mt-5 max-w-2xl leading-7 text-slate-400">
+                        I am open to research collaborations and scientific
+                        discussions on ultracold gases, nonequilibrium quantum
+                        dynamics, many-body theory and correlated lattice systems.
+                    </p>
+                </div>
+
+                <div class="md:text-right">
+                    <a
+                        href="mailto:rajat13sep@gmail.com"
+                        class="inline-flex items-center gap-2 text-lg font-semibold text-blue-300 transition hover:text-blue-200"
+                    >
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                        rajat13sep@gmail.com
+                    </a>
+                </div>
             </div>
 
-            <p class="mt-12 text-sm text-slate-500">&copy; 2026 Rajat. All Rights Reserved.</p>
+            <div
+                class="flex flex-col gap-6 pt-8 sm:flex-row sm:items-center sm:justify-between"
+            >
+                <p class="text-sm text-slate-500">
+                    © 2026 Rajat. All rights reserved.
+                </p>
+
+                <div class="flex items-center gap-3">
+
+                    <a
+                        href="https://scholar.google.com/citations?user=5HxdwzAAAAAJ&hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Google Scholar"
+                        class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-slate-400 transition hover:border-slate-500 hover:text-white"
+                    >
+                        <i data-lucide="graduation-cap" class="h-5 w-5"></i>
+                    </a>
+
+                    <a
+                        href="https://orcid.org/0000-0002-4882-1313"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="ORCID"
+                        class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-sm font-bold text-slate-400 transition hover:border-slate-500 hover:text-white"
+                    >
+                        iD
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/rajat-sharma-788a7561/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-slate-400 transition hover:border-slate-500 hover:text-white"
+                    >
+                        <i data-lucide="linkedin" class="h-5 w-5"></i>
+                    </a>
+
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
 
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    <script>
+        /* ---------------------------------------------------------
+           Publications
+        --------------------------------------------------------- */
+
+        const publications = [
+            {
+                year: 2026,
+                journal: 'Physical Review A',
+                note: 'Accepted',
+                title:
+                    'Spin and density excitations of one-dimensional self-bound Bose–Bose droplets',
+                authors:
+                    'Ritu, <strong>Rajat</strong>, M. Singh, R. K. Gupta and Sandeep Gautam',
+                link: 'https://doi.org/10.1103/w68w-68w5',
+                arxiv: 'https://arxiv.org/abs/2603.00987'
+            },
+            {
+                year: 2026,
+                journal: 'Physical Review Research 8, 033024',
+                title:
+                    'Metastability, chaos, and spectrum tomography for Bose–Hubbard rings and chains',
+                authors: '<strong>Rajat</strong> and Doron Cohen',
+                link: 'https://doi.org/10.1103/dbpg-938z',
+                arxiv: 'https://arxiv.org/abs/2603.23109'
+            },
+            {
+                year: 2026,
+                journal: 'Physical Review A 113, 043310',
+                title:
+                    'Finite-temperature phase diagram and collective modes of coherently coupled Bose mixtures',
+                authors:
+                    'Sunilkumar V, <strong>Rajat</strong>, Sandeep Gautam and Arko Roy',
+                link: 'https://doi.org/10.1103/l529-9544',
+                arxiv: 'https://arxiv.org/abs/2510.11671'
+            },
+            {
+                year: 2025,
+                journal: 'New Journal of Physics 27, 043005',
+                title:
+                    'Thermal amplification and melting of phases in spin-orbit-coupled spin-1 Bose–Einstein condensates',
+                authors:
+                    'Ritu, <strong>Rajat</strong>, Arko Roy and Sandeep Gautam',
+                link: 'https://doi.org/10.1088/1367-2630/adc6ae',
+                arxiv: 'https://arxiv.org/abs/2412.19285'
+            },
+            {
+                year: 2025,
+                journal: 'Physical Review A 111, 033316',
+                title:
+                    'Collective excitations and universal coarsening dynamics of a spin-orbit-coupled spin-1 Bose–Einstein condensate',
+                authors:
+                    '<strong>Rajat</strong>, Paramjeet Banger and Sandeep Gautam',
+                link: 'https://doi.org/10.1103/PhysRevA.111.033316',
+                arxiv: 'https://arxiv.org/abs/2410.22178'
+            },
+            {
+                year: 2025,
+                journal: 'Physical Review A 111, 023311',
+                title:
+                    'Excitations of a supersolid annular stripe phase in a spin-orbital-angular-momentum-coupled spin-1 Bose–Einstein condensate',
+                authors:
+                    'Paramjeet Banger, <strong>Rajat</strong> and Sandeep Gautam',
+                link: 'https://doi.org/10.1103/PhysRevA.111.023311',
+                arxiv: 'https://arxiv.org/abs/2411.17586'
+            },
+            {
+                year: 2024,
+                journal: 'Physical Review A 109, 033319',
+                title:
+                    'Temperature-induced supersolidity in spin-orbit-coupled Bose gases',
+                authors:
+                    '<strong>Rajat</strong>, Ritu, Arko Roy and Sandeep Gautam',
+                link: 'https://doi.org/10.1103/PhysRevA.109.033319',
+                arxiv: 'https://arxiv.org/abs/2312.08719'
+            },
+            {
+                year: 2023,
+                journal: 'Physical Review A 108, 043310',
+                title:
+                    'Quantum phases and the spectrum of collective modes in a spin-1 Bose–Einstein condensate with spin-orbital-angular-momentum coupling',
+                authors:
+                    'Paramjeet Banger, <strong>Rajat</strong>, Arko Roy and Sandeep Gautam',
+                link: 'https://doi.org/10.1103/PhysRevA.108.043310',
+                arxiv: 'https://arxiv.org/abs/2306.14669'
+            },
+            {
+                year: 2022,
+                journal: 'Physical Review A 106, 013304',
+                title:
+                    'Collective excitations in cigar-shaped spin-orbit-coupled spin-1 Bose–Einstein condensates',
+                authors:
+                    '<strong>Rajat</strong>, Arko Roy and Sandeep Gautam',
+                link: 'https://doi.org/10.1103/PhysRevA.106.013304',
+                arxiv: 'https://arxiv.org/abs/2204.06898'
+            }
+        ];
+
+        publications.sort((a, b) => b.year - a.year);
+
+        const publicationList =
+            document.getElementById('publication-list');
+
+        const publicationFilters =
+            document.getElementById('publication-filters');
+
+        const publicationCount =
+            document.getElementById('publication-count');
+
+        publicationCount.textContent = publications.length;
+
+        function renderPublications(year = 'all') {
+            publicationList.innerHTML = '';
+
+            const filtered =
+                year === 'all'
+                    ? publications
+                    : publications.filter(
+                        publication =>
+                            publication.year === Number(year)
+                    );
+
+            filtered.forEach((publication, index) => {
+                const item = document.createElement('li');
+
+                item.className =
+                    'academic-card rounded-2xl border border-slate-200 bg-white p-6 shadow-card md:p-7';
+
+                const acceptedBadge = publication.note
+                    ? `
+                        <span
+                            class="inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-800"
+                        >
+                            ${publication.note}
+                        </span>
+                    `
+                    : '';
+
+                item.innerHTML = `
+                    <article>
+                        <div
+                            class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                        >
+                            <div
+                                class="flex flex-wrap items-center gap-2 text-sm"
+                            >
+                                <span class="font-bold text-blue-700">
+                                    ${publication.year}
+                                </span>
+
+                                <span
+                                    class="hidden h-1 w-1 rounded-full bg-slate-300 sm:block"
+                                    aria-hidden="true"
+                                ></span>
+
+                                <span class="font-medium text-slate-500">
+                                    ${publication.journal}
+                                </span>
+
+                                ${acceptedBadge}
+                            </div>
+
+                            <span class="text-xs text-slate-400">
+                                ${String(index + 1).padStart(2, '0')}
+                            </span>
+                        </div>
+
+                        <h3
+                            class="mt-4 text-lg font-bold leading-7 text-slate-950 md:text-xl"
+                        >
+                            <a
+                                href="${publication.link}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="transition hover:text-blue-700"
+                            >
+                                ${publication.title}
+                            </a>
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-600">
+                            ${publication.authors}
+                        </p>
+
+                        <div
+                            class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold"
+                        >
+                            <a
+                                href="${publication.link}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-900"
+                            >
+                                DOI
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a
+                                href="${publication.arxiv}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 text-slate-600 hover:text-blue-700"
+                            >
+                                arXiv
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
+                `;
+
+                publicationList.appendChild(item);
+            });
+        }
+
+        function createPublicationFilters() {
+            const years = [
+                ...new Set(
+                    publications.map(publication => publication.year)
+                )
+            ].sort((a, b) => b - a);
+
+            const options = ['all', ...years];
+
+            options.forEach(option => {
+                const button = document.createElement('button');
+
+                button.type = 'button';
+
+                button.className =
+                    'publication-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-slate-400 hover:text-slate-900';
+
+                button.textContent =
+                    option === 'all'
+                        ? 'All'
+                        : option;
+
+                button.dataset.year = option;
+
+                button.setAttribute(
+                    'aria-pressed',
+                    option === 'all' ? 'true' : 'false'
+                );
+
+                button.addEventListener('click', () => {
+                    document
+                        .querySelectorAll('.publication-filter')
+                        .forEach(filter => {
+                            filter.setAttribute(
+                                'aria-pressed',
+                                'false'
+                            );
+                        });
+
+                    button.setAttribute('aria-pressed', 'true');
+
+                    renderPublications(option);
+                });
+
+                publicationFilters.appendChild(button);
+            });
+        }
+
+        createPublicationFilters();
+        renderPublications();
+
+
+        /* ---------------------------------------------------------
+           Mobile navigation
+        --------------------------------------------------------- */
+
+        const mobileMenuButton =
+            document.getElementById('mobile-menu-button');
+
+        const mobileMenu =
+            document.getElementById('mobile-menu');
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+
+            mobileMenuButton.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+            mobileMenuButton.innerHTML =
+                '<i data-lucide="menu" class="h-6 w-6"></i>';
+
+            lucide.createIcons();
+        }
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+
+            mobileMenuButton.setAttribute(
+                'aria-expanded',
+                'true'
+            );
+
+            mobileMenuButton.innerHTML =
+                '<i data-lucide="x" class="h-6 w-6"></i>';
+
+            lucide.createIcons();
+        }
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded =
+                mobileMenuButton.getAttribute('aria-expanded') ===
+                'true';
+
+            expanded
+                ? closeMobileMenu()
+                : openMobileMenu();
+        });
+
+        mobileMenu
+            .querySelectorAll('a')
+            .forEach(link => {
+                link.addEventListener(
+                    'click',
+                    closeMobileMenu
+                );
+            });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+
+        /* ---------------------------------------------------------
+           Active navigation state
+        --------------------------------------------------------- */
+
+        const observedSections = [
+            ...document.querySelectorAll(
+                'main section[id], footer[id]'
+            )
+        ];
+
+        const navLinks = [
+            ...document.querySelectorAll(
+                '#desktop-navigation .nav-link'
+            )
+        ];
+
+        const observer = new IntersectionObserver(
+            entries => {
+                const visible = entries
+                    .filter(entry => entry.isIntersecting)
+                    .sort(
+                        (a, b) =>
+                            b.intersectionRatio -
+                            a.intersectionRatio
+                    );
+
+                if (!visible.length) return;
+
+                const activeId =
+                    visible[0].target.id;
+
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        'active',
+                        link.getAttribute('href') ===
+                            `#${activeId}`
+                    );
+                });
+            },
+            {
+                rootMargin: '-20% 0px -65% 0px',
+                threshold: [0, 0.1, 0.3]
+            }
+        );
+
+        observedSections.forEach(section =>
+            observer.observe(section)
+        );
+
+
+        /* ---------------------------------------------------------
+           Profile image fallback
+        --------------------------------------------------------- */
+
+        const profileImage =
+            document.getElementById('profile-image');
+
+        const profileFallback =
+            document.getElementById('profile-fallback');
+
+        profileImage.addEventListener('error', () => {
+            profileImage.classList.add('hidden');
+
+            profileFallback.classList.remove('hidden');
+
+            profileFallback.classList.add('flex');
+        });
+
+
+        /* ---------------------------------------------------------
+           Icons
+        --------------------------------------------------------- */
+
+        lucide.createIcons();
     </script>
+
 </body>
 </html>
